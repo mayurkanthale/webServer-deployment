@@ -1,14 +1,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>JSP Demo - User Form Tes</title>
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef;
+            margin: 50px;
+        }
+        h1 {
+            color: #3366cc;
+        }
+        .info {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
-<h2>Enter Your Details</h2>
-<form action="result.jsp" method="post">
-    Name: <input type="text" name="username" required /><br><br>
-    Email: <input type="email" name="email" required /><br><br>
-    <input type="submit" value="Submit">
-</form>
-</body>
-</html>
+
+<h1>Welcome to My JSP Demo</h1>
+
+<div class="info">
+    <%
+        String name = request.getParameter("name");
+        if (name == null || name.isEmpty()) {
+            name = "Guest";
+        }
+    %>
+
+    <p>Hello, <strong><%= name %></str
