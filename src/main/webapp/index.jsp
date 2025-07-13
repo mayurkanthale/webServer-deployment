@@ -1,34 +1,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome Page</title>
+    <title>Bank Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #eef;
-            margin: 50px;
+            font-family: Arial;
+            background-color: #f0f8ff;
+            padding: 50px;
         }
-        h1 {
-            color: #3366cc;
-        }
-        .info {
-            padding: 10px;
-            background-color: #fff;
+        .login-box {
+            background: #ffffff;
+            padding: 20px;
+            width: 300px;
             border: 1px solid #ccc;
-            width: 400px;
+            margin: auto;
         }
     </style>
 </head>
 <body>
-
-<h1>Welcome to My JSP Demo</h1>
-
-<div class="info">
-    <%
-        String name = request.getParameter("name");
-        if (name == null || name.isEmpty()) {
-            name = "Guest";
-        }
-    %>
-
-    <p>Hello, <strong><%= name %></str
+    <div class="login-box">
+        <h2>Bank Login</h2>
+        <form method="post" action="validate.jsp">
+            Username: <br>
+            <input type="text" name="username" required /><br><br>
+            Password: <br>
+            <input type="password" name="password" required /><br><br>
+            <input type="submit" value="Login" />
+        </form>
+    </div>
+</body>
+</html>
